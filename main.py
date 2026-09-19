@@ -193,8 +193,8 @@ async def main():
         for cupcake in cupcakes:
             cupcake.draw(screen)
         # Draw Text
-            textSurface = font.render("Score: " + str(score), True, "white")
-            screen.blit(textSurface, (10, 10))
+        textSurface = font.render("Score: " + str(score), True, "white")
+        screen.blit(textSurface, (10, 10))
         # Render
         pygame.display.flip()
         await asyncio.sleep(0)

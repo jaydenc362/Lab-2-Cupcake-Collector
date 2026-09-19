@@ -146,8 +146,14 @@ player = Player()
 # Create Platforms
 platforms = []
 platforms.append(Platform(0, HEIGHT - 50, WIDTH, 50))
-platforms.append(Platform(200, 200, 50, 50))
-platforms.append(Platform(400, 250, 50, 50))
+platforms.append(Platform(20, 220, 200, 30))
+platforms.append(Platform(400, 250, 50, 70))
+platforms.append(Platform(400, 110, 50, 50))
+platforms.append(Platform(390, 150, 10, 10))
+platforms.append(Platform(WIDTH - 20, 100, 60, 20))
+platforms.append(Platform(WIDTH - 60, 180, 60, 20))
+platforms.append(Platform(50, 70, 140, 20))
+platforms.append(Platform(50, 70, 30, 50))
 
 # Create Cupcakes
 cupcakes = []
@@ -178,9 +184,6 @@ async def main():
                 score += 1
         # Draw Background
         screen.fill("cornflowerblue")
-        # Draw Text
-        textSurface = font.render("Score: " + str(score), True, "white")
-        screen.blit(textSurface, (10, 10))
         # Draw Player
         player.draw(screen)
         # Draw All Platforms
@@ -189,6 +192,9 @@ async def main():
         # Draw All Cupcakes
         for cupcake in cupcakes:
             cupcake.draw(screen)
+        # Draw Text
+            textSurface = font.render("Score: " + str(score), True, "white")
+            screen.blit(textSurface, (10, 10))
         # Render
         pygame.display.flip()
         await asyncio.sleep(0)

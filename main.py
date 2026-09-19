@@ -201,6 +201,3 @@ async def main():
 
 # Run Game Loop
 asyncio.run(main())
-
-# Quit
-pygame.quit()
